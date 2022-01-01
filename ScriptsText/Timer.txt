@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class TimerScripts : MonoBehaviour
+{
+
+    public static float time;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        time = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (GoalScripts.goal == false)
+        {
+            time += Time.deltaTime;
+        }
+        int i = Mathf.FloorToInt(time);
+        Text uitext = GetComponent<Text>();
+        uitext.text = "Time:" + i;
+    }
+}
